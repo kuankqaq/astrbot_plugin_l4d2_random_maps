@@ -1,0 +1,2 @@
+# astrbot_plugin_l4d2_random_maps
+一个简单的求生之路地图随机抽取插件
