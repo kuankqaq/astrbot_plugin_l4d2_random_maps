@@ -5,7 +5,7 @@ from astrbot.api.event import filter, AstrMessageEvent
 from astrbot.api.star import Context, Star, register
 from astrbot.api import logger
 
-@register("random_maps", "Assistant", "随机抽取三方地图插件", "1.0.0", "https://github.com/your-repo/random_maps")
+@register("l4d2_random_map", "kuank", "随机抽取三方地图插件", "1.0.1", "https://github.com/kuankqaq/astrbot_plugin_l4d2_random_maps")
 class RandomMapsPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
@@ -22,7 +22,7 @@ class RandomMapsPlugin(Star):
             yield event.plain_result("个数必须大于0，例如：/随机三方 3")
             return
 
-        api_url = "https://maps.kuank.top/maomap.json"
+        api_url = "https://maps.kuank.top/maomaps.json"
         try:
             async with httpx.AsyncClient() as client:
                 response = await client.get(api_url, timeout=10)
